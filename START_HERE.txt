@@ -1,0 +1,24 @@
+GOALOS 2026 - GOOGLE DRIVE + GMAIL UPGRADE
+=========================================
+
+1) Extract ZIP and replace your OLD GitHub Pages website files with the NEW files.
+2) NEVER upload your private .json/.xlsx data to the public GitHub repo.
+3) Import your personal JSON in GoalOS -> Settings & backup -> Import JSON.
+4) To connect Drive: Google Cloud -> enable Drive API -> Web OAuth Client ->
+   add JavaScript origin https://YOUR-USERNAME.github.io ->
+   paste the Client ID into site-config.js -> upload the updated file ->
+   GoalOS -> Settings -> Connect Google Drive -> Back up now.
+5) For AUTOMATIC daily backup copies AND Gmail deadline emails:
+   - Go to https://script.google.com/home/projects/create
+   - Copy google-apps-script/Code.gs into your private Apps Script project.
+   - Replace YOUR_EMAIL@gmail.com with your real email there (NOT on GitHub).
+   - Run installDailyTrigger once, approve permissions.
+   - Run sendTestEmail once and confirm you received the message.
+   - The script checks your latest synced Drive JSON once daily, even if
+     the website is closed. It can only see changes that reached Drive.
+6) Check GoalOS Settings & backup to set email days e.g. 7,3,1,0.
+
+FULL DETAILED GUIDE: SETUP_GOOGLE.md  (included in the ZIP)
+
+The website alone cannot back up your CLOSED browser's unsynced edits.
+Access to Drive expires and needs reconnecting in the browser.
